@@ -7,7 +7,7 @@
 
 set_time_limit(0);
 
-require_once __DIR__ . '/../../../frontend/autoload.php';
+require_once __DIR__ . '/../../../autoload.php';
 
 use Symfony\Component\Console\Input\ArgvInput;
 use Issei\MultipleAppsSupport\Console\Application;
@@ -15,7 +15,7 @@ use Issei\MultipleAppsSupport\Console\Application;
 $input = new ArgvInput();
 $appsDir = $input->getParameterOption('--apps-dir', 'apps');
 
-require_once __DIR__ . '/../../../../' . $appsDir . '/bootstrap.php.cache';
+require_once __DIR__ . '/../../../../' . $appsDir . '/frontend/bootstrap.php.cache';
 
 $application = new Application();
 $application->run($input);
